@@ -9,6 +9,38 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <h1 id="title">interval timer</h1>
+    <form id="myform">
+      <label id="workoutNameLabel" for="workoutName">Workout Name</label>
+      <input type="text" id="workoutName" name="workoutName" value="" />
+
+      <label id="warmupLabel" for="warmup">Warm Up</label>
+      <input type="time" id="warmup" name="warmup" value="" />
+
+      <label id="exerciseNameLabel" for="exerciseName">Exercise Name</label>
+      <input type="text" id="exerciseName" name="exerciseName" value="" />
+
+      <label id="setsLabel" for="sets">Number of sets</label>
+      <input type="number" id="sets" name="sets" value="" />
+
+      <label id="workLabel" for="work">Workout time</label>
+      <input type="time" id="work" name="work" value="" />
+
+      <label id="restLabel" for="rest">Rest time</label>
+      <input type="time" id="rest" name="rest" value="" />
+
+      <button id="addExercise">Add Exercise</button>
+
+      <label id="cooldownLabel" for="cooldown">Cooldown</label>
+      <input type="time" id="cooldown" name="cooldown" value="" />
+    </form>
+
+    <!-- <div class="savedExercises">
+      <ul>
+        <li>exercise 1</li>
+      </ul>
+    </div> -->
+
     <script src="scripts/main.js" async defer></script>
   </body>
 </html>
