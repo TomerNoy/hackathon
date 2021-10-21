@@ -1,5 +1,6 @@
 * {
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 html {
@@ -12,40 +13,54 @@ body {
 
 #title {
   text-align: center;
+  margin: 30px 0px;
 }
 
 #myform {
   display: grid;
   grid-auto-columns: 1fr 1fr;
+  grid-template-rows: repeat(8, 1fr);
+  row-gap: 12px;
   grid-template-areas:
     "workoutNameLabel  workoutName"
     "warmupLabel warmup"
     "exerciseNameLabel exerciseName"
     "setsLabel sets"
+    "workLabel work"
     "restLabel rest"
     "addExercise addExercise"
     "cooldownLabel cooldown";
 
   width: max-content;
   background-color: lightgrey;
-  justify-content: space-between;
-
-  /* align-content: space-around;
-  justify-content: space-between; */
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 8px;
 }
 
-label, input {
+label {
   width: 100%;
+}
+input {
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding: 8px;
+  justify-self: end;
+}
+
+input[type="time"] {
+  width: 80%;
+}
+
+input[type="text"] {
 }
 
 #workoutName {
   grid-area: workoutName;
-  background-color: red;
 }
 
 #workoutNameLabel {
   grid-area: workoutNameLabel;
-  background-color: purple;
 }
 
 #warmup {
@@ -62,12 +77,6 @@ label, input {
   grid-area: exerciseNameLabel;
 }
 
-#sets {
-  grid-area: sets;
-}
-#setsLabel {
-  grid-area: setsLabel;
-}
 #rest {
   grid-area: rest;
 }
@@ -102,9 +111,14 @@ label, input {
 .savedExercises {
   background-color: lightpink;
   width: max-content;
-  padding: 30px;
+  padding: 10px;
 }
 
 .savedExercises li {
   list-style-type: none;
+  display: flex;
+}
+
+.savedExercises li > * {
+  padding: 0px 16px;
 }
