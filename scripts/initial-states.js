@@ -1,9 +1,10 @@
 'use strict'
+import {DEFAULT_WARMUP_NAME, DEFAULT_COOLDOWN_NAME} from './constants.js'
 //basic initial structures
 //initialWarmup
 const initialWarmup = {
     time: null, //warmup time
-    defaultName =DEFAULT_WARMUP_NAME,
+    defaultName: DEFAULT_WARMUP_NAME,
     name: null
 };
 export const getInitialWarmup = ()=> {
@@ -12,7 +13,7 @@ export const getInitialWarmup = ()=> {
 
 const initialCooldown = {
     time: null, //cooldown time
-    defaultName =DEFAULT_COOLDOWN_NAME,
+    defaultName :DEFAULT_COOLDOWN_NAME,
     name: null
 };
 export const getInitialCooldown = ()=> {
