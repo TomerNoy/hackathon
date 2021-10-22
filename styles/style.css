@@ -4,10 +4,10 @@
   --bg1: rgba(255, 255, 255, 0.1);
 
   --textCol: #f5fffa;
-  
-  --accent1: #E76F51;
-  --accent2: #E9C46A;
-  --accent3: #2A9D8F;
+
+  --accent1: #e76f51;
+  --accent2: #e9c46a;
+  --accent3: #2a9d8f;
 
   --fontFamilyTitile: "Comfortaa", cursive;
   --fontFamilySecondary: "300 Roboto", sans-serif;
@@ -34,7 +34,7 @@ html {
 
 h1 {
   text-align: center;
-  margin-top: 5%;
+  margin: 5% 0;
   font-family: var(--fontFamilyTitile);
   letter-spacing: 0.1em;
   font-size: 2em;
@@ -75,11 +75,12 @@ input[type="number"],
 
 input[type="text"] {
   text-align: center;
+  padding: 5px;
 }
 
 /* workouts ----------------------------------------------- */
 .workouts {
-  /* display: none; */
+  margin-bottom: 200px;
 }
 
 .workouts button {
@@ -116,6 +117,7 @@ input[type="text"] {
 /* workout ------------------------------------------------ */
 .workout {
   /* display: none; */
+  margin-bottom: 200px;
 }
 
 .grid {
@@ -228,6 +230,7 @@ input[type="text"] {
 /* play --------------------------------------------------- */
 .play {
   /* display: none; */
+  margin-bottom: 200px;
 }
 
 .play time {
