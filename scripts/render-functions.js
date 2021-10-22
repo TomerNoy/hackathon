@@ -23,7 +23,7 @@ export const  renderWorkout = (exercise) =>{
 };
 
 //TODO Render methods for a workout list
-export const renderExerciseList  = (workoutList) =>{
+export const renderWorkoutList  = (workoutList) =>{
     return workoutList.map( (workout) => {
         return renderWorkout(workout)
     }).join("");
