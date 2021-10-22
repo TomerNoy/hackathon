@@ -3,54 +3,120 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- <title></title> -->
+    <title>name?</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/ae1d3a79b9.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1 id="title">interval timer</h1>
-    <form id="myform">
-      <label id="workoutNameLabel" for="workoutName">Workout Name</label>
-      <input type="text" id="workoutName" name="workoutName" value="" />
+    <div class="workouts">
+      <h1>WORKOUTS</h1>
+      <div class="workoutsList">
+        <button>
+          <p>workout example1</p>
+          <time>01:30</time>
+        </button>
+        <button>
+          <p>workout example2</p>
+          <time>01:30</time>
+        </button>
+        <button>
+          <p>workout example3</p>
+          <time>01:30</time>
+        </button>
+      </div>
+    </div>
 
-      <label id="warmupLabel" for="warmup">Warm Up</label>
-      <input type="time" id="warmup" name="warmup" value="" />
+    <div class="workout">
+      <h1>WORKOUT</h1>
+      <form id="myform">
+        <div class="box">
+          <input
+            type="text"
+            id="workoutName"
+            name="workoutName"
+            value=""
+            placeholder="Workout Name"
+          />
+        </div>
 
-      <label id="exerciseNameLabel" for="exerciseName">Exercise Name</label>
-      <input type="text" id="exerciseName" name="exerciseName" value="" />
+        <div class="box">
+          <label id="warmupLabel" for="warmup">Warm Up</label>
+          <input type="time" id="warmup" name="warmup" value="00:00" />
+        </div>
 
-      <label id="setsLabel" for="sets">Number of sets</label>
-      <input type="number" id="sets" name="sets" value="" />
+        <!-- exercise -->
+        <div class="grid">
+          <!-- label -->
+          <input
+            type="text"
+            id="exerciseName"
+            name="exerciseName"
+            value=""
+            placeholder="Exercise Name"
+          />
 
-      <label id="workLabel" for="work">Workout time</label>
-      <input type="time" id="work" name="work" value="" />
+          <!-- total exercise time -->
+          <time id="totalTime">00:00</time>
+          <!-- number of sets -->
+          <input
+            type="number"
+            min="1"
+            max="99"
+            id="sets"
+            name="sets"
+            value="1"
+          />
+          <label id="setsLabel" for="sets">Sets</label>
 
-      <label id="restLabel" for="rest">Rest time</label>
-      <input type="time" id="rest" name="rest" value="" />
+          <!-- work set time -->
+          <input type="time" id="work" name="work" value="00:30" />
+          <label id="workLabel" for="work">Work</label>
 
-      <button id="addExercise">Add Exercise</button>
+          <!-- rest -->
+          <input type="time" id="rest" name="rest" value="00:15" />
+          <label id="restLabel" for="rest">Rest</label>
 
-      <label id="cooldownLabel" for="cooldown">Cooldown</label>
-      <input type="time" id="cooldown" name="cooldown" value="" />
-    </form>
+          <!-- add -->
+          <button id="addExercise">
+            Add <i class="fas fa-plus fa-lg"></i>
+          </button>
+        </div>
 
-    <div class="savedExercises">
-      <ul>
-        <li>
-          <p>name</p>
-          <p>sets</p>
-          <time>Workout time</time>
-          <time>rest time</time>
-        </li>
+        <div class="box">
+          <label id="cooldownLabel" for="cooldown">Cooldown</label>
+          <input type="time" id="cooldown" name="cooldown" value="00:00" />
+        </div>
+      </form>
 
-        <li>
-          <p>name</p>
-          <p>sets</p>
-          <time>Workout time</time>
-          <time>rest time</time>
-        </li>
-      </ul>
+      <div class="savedExercises">
+        <div class="box">
+          <p>example push ups</p>
+          <p>3</p>
+          <time>00:30</time>
+          <time>00:45</time>
+          <button><i class="fas fa-minus"></i></button>
+        </div>
+
+        <div class="box">
+          <p>example dead lifts</p>
+          <p>5</p>
+          <time>00:40</time>
+          <time>00:30</time>
+          <button><i class="fas fa-minus"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="play">
+      <h1>WARMUP</h1>
+      <time><h1>00:00</h1></time>
+      <p>title can be: WARMUP/REST/WORK/COOLDOWN</p>
+      <p>time: dont need total workout countdown, just for the current title</p>
     </div>
 
     <script src="scripts/main.js" type="module" async defer></script>
