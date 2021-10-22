@@ -1,9 +1,10 @@
 'use strict'
-import {getInitialWarmup, getInitialExercise, getInitialWorkoutPlan, getInitialUserSettings , getInitialState}  from './initial-states.js';
+import {getInitialWarmup, getInitialExercise, getInitialWorkoutPlan , getInitialState}  from './initial-states.js';
 import {getChosenWorkout, goToPlayPageAndPlay, goToWorkoutPage, goToWorkoutsPage} from './methods.js';
+import {getDemoData} from './data.js'
 import {createExercise, updateExercise, deleteExercise, getExercise} from './crud-functions.js';
 import {createWorkout, updateWorkout, deleteWorkout, getWorkout} from './crud-functions.js';
-import {renderExercise,renderExerciseList,renderWorkout,renderWorkoutList} from './render-functions.js';
+import {renderExercise,renderExerciseList,renderWorkout, renderWorkoutList} from './render-functions.js';
 
 //get initialState  - from getInitialState or TODO local-storage
 const initialState =  getInitialState();
@@ -12,13 +13,29 @@ const initialState =  getInitialState();
 // window.addEventListener('load',()=>{
 // });
 
+
+window.addEventListener('load',()=>{
+    console.log('loaded');
 //put state
-window.intervalAppState = initialState;
+let appState = initialState;
+
+//for testing
+// let appState = getDemoData();
+
+window.intervalAppState = appState;
+
+// const appState = intervalAppState;
+//test fake data
+console.log(getDemoData());
 
 //render by state on load
 const workoutListEl = document.querySelector(".workoutsList");
 //show the workouts page by state onload
-// renderWorkoutList()
+console.log(appState.workouts);
+workoutListEl.innerHTML = renderWorkoutList(appState.workouts);
+
+});
+
 
 //on btn click on create new workout or a specific workout go to a single-workout page with either no data or existing exercises
 const submitBtn = document.querySelector("form");

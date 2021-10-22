@@ -36,7 +36,8 @@ const initialWorkoutPlan = {
     exercises:[], //list of all exercises in the workout plan
     warmUpTime:null, //
     coolDownTime:null,
-    totalTime
+    name:null,
+    totalTime:0
 };
 
 export const  getInitialWorkoutPlan = ()=> {

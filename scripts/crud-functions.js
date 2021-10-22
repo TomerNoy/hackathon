@@ -1,6 +1,6 @@
 'use strict'
 
-import { getWorkoutTotalTime } from "./methods";
+import { getWorkoutTotalTime } from "./methods.js";
 
 //CRUD functions - for exercises
 //create function

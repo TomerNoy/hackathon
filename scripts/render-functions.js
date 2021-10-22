@@ -15,8 +15,13 @@ export const renderExerciseList  = (exerciseList) =>{
 }
 
 //TODO Render methods for a workout
-export const  renderWorkout = (exercise) =>{
-    let workoutHTMLStr = '';
+export const  renderWorkout = (workout) =>{
+    let workoutHTMLStr = `<div class="workout-short box">
+        <i class="fas fa-sliders-h"></i>
+        <p class="workout-name">${workout.name}</p>
+        <time class="workout-total-time">${workout.totalTime}</time>
+        <i class="fas fa-play" aria-hidden="true"></i>
+        </div>`;
     // let [name, time, sets] = exercise;
     // let exerciseHTMLStr = `<div>${name} ${time} ${sets}<br/></div>`;
     return workoutHTMLStr;
@@ -28,6 +33,8 @@ export const renderWorkoutList  = (workoutList) =>{
         return renderWorkout(workout)
     }).join("");
 };
+
+
 
 
 //TODO general render methods if possible, with the reference material below

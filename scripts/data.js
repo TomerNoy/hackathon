@@ -33,17 +33,24 @@ const exercisesList = [
 ]
 
 const workout1 = {
+    name:'workout for home',
     exercises:exercisesList,
+    totalTime:5000
+};
+const workout2 = {
+    name:'workout for hotel',
+    exercises:exercisesList,
+    totalTime:3000
 };
 
 const demoData = {
     workouts:[
         workout1,
-        workout1
+        workout2
     ]
 };
 
-const getDemoData = () =>{
+export const getDemoData = () =>{
     return demoData;
 }
 
