@@ -1,4 +1,8 @@
 'use strict'
+
+//THIS IS FAKE DATA UNTIL CONNECTED TO THE REAL FORM
+//USE FOR TESTING THE FUNCTIONS AND FOR SEEING THE DATA REPRESENTATION
+
 //TODO make fake exercises and workouts for testing and filling
 
 const pushupsExercise = {
@@ -34,6 +38,7 @@ const workout1 = {
 
 const demoData = {
     workouts:[
+        workout1,
         workout1
     ]
 };
@@ -42,7 +47,7 @@ const getDemoData = () =>{
     return demoData;
 }
 
-let util = require('util');
-console.log(util.inspect(getDemoData(),{showHidden: false, depth: null, colors: true}));
+// let util = require('util');
+// console.log(util.inspect(getDemoData(),{showHidden: false, depth: null, colors: true}));
 
 let state = getDemoData;
