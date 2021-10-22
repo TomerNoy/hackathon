@@ -13,6 +13,7 @@
     ></script>
   </head>
   <body>
+    <!-- workouts -->
     <div class="workouts">
       <h1>WORKOUTS</h1>
       <div class="workoutsList">
@@ -29,8 +30,10 @@
           <time>01:30</time>
         </button>
       </div>
+      <button id="addWorkout">Add<i class="fas fa-plus fa-lg"></i></button>
     </div>
 
+    <!-- workout -->
     <div class="workout">
       <h1>WORKOUT</h1>
       <form id="myform">
@@ -89,7 +92,7 @@
 
         <div class="box">
           <label id="cooldownLabel" for="cooldown">Cooldown</label>
-          <input type="time" id="cooldown" name="cooldown" value="00:00" />
+          <input type="time" id="cooldown" name="cooldown" value="00:90" />
         </div>
       </form>
 
@@ -110,11 +113,17 @@
           <button><i class="fas fa-minus"></i></button>
         </div>
       </div>
+
+      <div class="buttons">
+        <button id="backButton"><i class="fas fa-chevron-left"></i>Back</button>
+        <button id="saveWorkout">Save <i class="fas fa-save"></i></button>
+      </div>
     </div>
 
     <div class="play">
       <h1>WARMUP</h1>
       <time><h1>00:00</h1></time>
+      <button id="backButton"><i class="fas fa-chevron-left"></i>Back</button>
       <p>title can be: WARMUP/REST/WORK/COOLDOWN</p>
       <p>time: dont need total workout countdown, just for the current title</p>
     </div>

@@ -4,10 +4,10 @@
   --bg1: rgba(255, 255, 255, 0.1);
 
   --textCol: #f5fffa;
-  --accent1: #fb8500;
-  /* --accent2: #ffb703; */
-  --accent2: #9ACD32;
-  --accent3: #00CED1;
+  
+  --accent1: #E76F51;
+  --accent2: #E9C46A;
+  --accent3: #2A9D8F;
 
   --fontFamilyTitile: "Comfortaa", cursive;
   --fontFamilySecondary: "300 Roboto", sans-serif;
@@ -78,11 +78,46 @@ input[type="text"] {
 }
 
 /* workouts ----------------------------------------------- */
+.workouts {
+  /* display: none; */
+}
+
 .workouts button {
   border: none;
 }
 
+#addWorkout,
+#saveWorkout {
+  width: max-content;
+  margin-top: 30px;
+  color: var(--accent3);
+  font-weight: bold;
+  border: none;
+}
+
+#backButton {
+  width: max-content;
+  margin-top: 30px;
+  color: var(--accent1);
+  font-weight: bold;
+  border: none;
+}
+
+#backButton i {
+  padding: 4px 10px 4px 0px;
+  color: var(--accent1);
+}
+
+.buttons {
+  display: flex;
+  width: 500px;
+}
+
 /* workout ------------------------------------------------ */
+.workout {
+  /* display: none; */
+}
+
 .grid {
   border-radius: 8px;
   width: 500px;
@@ -100,7 +135,7 @@ input[type="text"] {
     ". . ."
     "sets work rest"
     "setsLabel workLabel restLabel"
-    ". addExercise .";
+    "addExercise addExercise addExercise";
 
   gap: 10px;
   -webkit-backdrop-filter: blur(10px);
@@ -148,15 +183,17 @@ input[type="text"] {
 /* add exercise button */
 #addExercise {
   grid-area: addExercise;
-  display: flex;
   width: max-content;
   flex-direction: row;
   padding: 6px 18px;
-  background-color: transparent;
+  background-color: var(--bg1);
   color: var(--accent3);
   font-weight: bold;
+  border: none;
 }
-#addExercise i {
+#addExercise i,
+#addWorkout i,
+#saveWorkout i {
   padding: 4px 0 4px 10px;
   color: var(--accent3);
 }
@@ -171,10 +208,6 @@ input[type="text"] {
 
 #workoutName {
   width: 100%;
-}
-
-.workout {
-  display: block;
 }
 
 .savedExercises {
@@ -193,6 +226,10 @@ input[type="text"] {
 }
 
 /* play --------------------------------------------------- */
+.play {
+  /* display: none; */
+}
+
 .play time {
   font-size: 3em;
 }
@@ -218,6 +255,10 @@ input[type="text"] {
     width: 350px;
   }
 
+  .buttons {
+    width: 350px;
+  }
+
   .grid {
     width: 350px;
     grid-auto-columns: 1fr 1fr 1fr;
@@ -240,5 +281,8 @@ input[type="text"] {
   .grid {
     width: 450px;
     gap: 8px;
+  }
+  .buttons {
+    width: 450px;
   }
 }
