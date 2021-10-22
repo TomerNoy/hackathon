@@ -1,6 +1,6 @@
 'use strict'
 import {getInitialWarmup, getInitialExercise, getInitialWorkoutPlan, getInitialUserSettings , getInitialState}  from './initial-states.js';
-import {getChosenWorkout} from './methods.js';
+import {getChosenWorkout, goToWorkoutPage} from './methods.js';
 import {createExercise, updateExercise, deleteExercise, getExercise} from './crud-functions.js';
 import {createWorkout, updateWorkout, deleteWorkout, getWorkout} from './crud-functions.js';
 import {renderExercise,renderExerciseList,renderWorkout,renderWorkoutList} from './render-functions.js';
@@ -37,7 +37,9 @@ submitBtn.addEventListener('submit',(e)=>{
 });
 
 //adding event listeners for moving pages
-// const addWorkoutBtn =
+const addWorkoutBtn = document.querySelector("#addWorkout",()=>{
+    goToWorkoutPage();
+});
 
 
 
