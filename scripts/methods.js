@@ -1,6 +1,5 @@
 
-
-
+'use strict'
 export const getChosenWorkout = () =>{
     return window.intervalAppState.chosenWorkout;
 };

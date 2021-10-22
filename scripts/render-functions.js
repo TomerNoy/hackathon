@@ -1,4 +1,4 @@
-
+'use strict'
 //TODO Render methods for an exercise
 export const renderExercise = (exercise) =>{
     let [name, time, sets] = exercise;
@@ -16,7 +16,7 @@ export const renderExerciseList  = (exerciseList) =>{
 
 //TODO Render methods for a workout
 export const  renderWorkout = (exercise) =>{
-    let workOutHTMLStr = '';
+    let workoutHTMLStr = '';
     // let [name, time, sets] = exercise;
     // let exerciseHTMLStr = `<div>${name} ${time} ${sets}<br/></div>`;
     return workoutHTMLStr;

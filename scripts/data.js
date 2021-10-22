@@ -1,4 +1,4 @@
-
+'use strict'
 //TODO make fake exercises and workouts for testing and filling
 
 const pushupsExercise = {

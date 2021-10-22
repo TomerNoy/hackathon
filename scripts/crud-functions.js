@@ -1,4 +1,4 @@
-
+'use strict'
 //CRUD functions - for exercises
 //create function
 export const createNewExercise = (exerciseList, newExercise) =>{
