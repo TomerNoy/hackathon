@@ -289,3 +289,31 @@ input[type="text"] {
     width: 450px;
   }
 }
+
+
+/* for workout list mode - initial mode - show only workout-list page - when starting or when click on back to workout-list btn */
+body.workouts-page .workouts{
+  display:block;
+}
+body.workouts-page  .workout,
+body.workouts-page .play{
+  display:none;
+}
+
+/* for workout-page  mode - show only workout-page - when clicks on a workout or on add workout button on workout-list page */
+body.workout-page  .workout{
+  display:block;
+}
+body.workout-page .workouts,
+body.workout-page  .play{
+  display:none;
+}
+
+/* for player-page  mode - show only player-page - when click on play workout btn */
+body.play-page .play{
+  display:block;
+}
+body.play-page .workouts,
+body.play-page .workout{
+  display:none;
+}
