@@ -16,13 +16,9 @@ export const startWorkoutPlan = (elemRef) =>{
 //TODO
 //make clock page appear and hide the other pages
 
-
 //go over workout warmup, exercises, and cooldown and run workout  on clock as long as there is a work
 
-
 //go back to workout page
-
-
 
 export const goToWorkoutsPage = () =>{
     let body = document.body;
@@ -41,4 +37,3 @@ export const goToPlayPage = () =>{
     body.classList.remove('workouts-page','workout-page');
     body.classList.add('play-page');
 }
-

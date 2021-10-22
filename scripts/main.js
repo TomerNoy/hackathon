@@ -1,6 +1,6 @@
 'use strict'
 import {getInitialWarmup, getInitialExercise, getInitialWorkoutPlan, getInitialUserSettings , getInitialState}  from './initial-states.js';
-import {getChosenWorkout, goToWorkoutPage} from './methods.js';
+import {getChosenWorkout, goToWorkoutPage, goToWorkoutsPage} from './methods.js';
 import {createExercise, updateExercise, deleteExercise, getExercise} from './crud-functions.js';
 import {createWorkout, updateWorkout, deleteWorkout, getWorkout} from './crud-functions.js';
 import {renderExercise,renderExerciseList,renderWorkout,renderWorkoutList} from './render-functions.js';
@@ -37,11 +37,41 @@ submitBtn.addEventListener('submit',(e)=>{
 });
 
 //adding event listeners for moving pages
-const addWorkoutBtn = document.querySelector("#addWorkout",()=>{
+//click on access a specific workout page
+const goToSpecificWorkoutPage = document.querySelector("#addWorkout");
+goToSpecificWorkoutPage.addEventListener('click',(e)=>{
+    e.preventDefault();
+    console.log('ADDWORKOUTbtn');
     goToWorkoutPage();
 });
 
+//do on click on add workout btn - open the workout page
+const addWorkoutBtn = document.querySelector("#addWorkout");
+addWorkoutBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    console.log('ADDWORKOUTbtn');
+    goToWorkoutPage();
+});
 
+//do on click on back to workouts btn
+const backToWorkoutBtn = document.querySelector("#backButton");
+backToWorkoutBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    console.log('BACKTOWORKOUTSbtn');
+    goToWorkoutsPage();
+});
+
+//click on save a workout
+const saveWorkoutBtn = document.querySelector("#saveWorkout");
+saveWorkoutBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    console.log('BACKTOWORKOUTSbtn');
+    //TODO save the workout in the workout-list in state before moving to the page there
+
+
+    //go the workouts page
+    goToWorkoutsPage();
+});
 
 
 
