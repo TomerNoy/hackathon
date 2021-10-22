@@ -1,7 +1,7 @@
 'use strict'
 //CRUD functions - for exercises
 //create function
-export const createNewExercise = (exerciseList, newExercise) =>{
+export const createWorkout = (exerciseList, newExercise) =>{
     const newExerciseList = exerciseList.concat([newExercise]);
     return newExerciseList;
 };
@@ -28,3 +28,28 @@ export const deleteExercise = (exercises, exerciseIdxToDelete) => {
 
 
 //TODO CRUD functions - for workouts
+
+//create workout
+export const createWorkout = (workoutList, newWorkout) =>{
+    const newWorkoutList = workoutList.concat([newWorkout]);
+    return newWorkoutList;
+};
+//read/get function
+export const getWorkout = (workoutList, workoutIdx) => {
+    return workoutList[workoutIdx];
+};
+
+//update function
+export const updateWorkout = (originalWorkoutIdx , newWorkout) =>{
+    const newList = list.map((currWorkout, currWorkoutIdx) => {
+        return currWorkoutIdx === originalWorkoutIdx ? newWorkout : currWorkout;
+    });
+   return newList;
+};
+//delete function
+export const deleteWorkout = (workouts, workoutIdxToDelete) => {
+    const newWorkoutList = workouts.filter((_, currWorkoutIdx) => {
+        return currWorkoutIdx !== workoutIdxToDelete
+    })
+    return newWorkoutList;
+}
