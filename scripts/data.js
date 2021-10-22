@@ -31,16 +31,19 @@ const exercisesList = [
     pullupsExercise,
     sprintsExercise
 ]
-
 const workout1 = {
     name:'workout for home',
     exercises:exercisesList,
-    totalTime:5000
+    totalTime:5000,
+    warmUpTime:null, //
+    coolDownTime:null
 };
 const workout2 = {
     name:'workout for hotel',
     exercises:exercisesList,
-    totalTime:3000
+    totalTime:3000,
+    warmUpTime:null, //
+    coolDownTime:null
 };
 
 const demoData = {

@@ -34,6 +34,66 @@ const workoutListEl = document.querySelector(".workoutsList");
 console.log(appState.workouts);
 workoutListEl.innerHTML = renderWorkoutList(appState.workouts);
 
+
+
+//TOMER - START play test here
+//go to play page
+//and play this workout object
+//with the function goPlay... below
+const pushupsExercise = {
+    name:'pushups',
+    sets:3,
+    workoutTime:60,
+    restTime:30
+};
+
+const pullupsExercise =     {
+    name:'pullups',
+    sets:5,
+    workoutTime:60,
+    restTime:30
+};
+
+const sprintsExercise =  {
+    name:'sprints',
+    sets:2,
+    workoutTime:60,
+    restTime:30
+};
+
+const exercisesList = [
+    pushupsExercise,
+    pullupsExercise,
+    sprintsExercise
+]
+
+const workout1 = {
+    name:'workout for home',
+    exercises:exercisesList,
+    totalTime:5000,//in seconds
+    warmUpTime:400, //
+    coolDownTime:300
+};
+
+function goToPlayPageAndPlay(workoutObj){
+    let body = document.body;
+    body.classList.remove('workouts-page','workout-page');
+    body.classList.add('play-page');
+
+    //play the timers for warmup exercises cooldown and exercises workoutObj
+
+    //show success message
+
+    //go to workout page on go back btn click
+
+}
+
+//this is supposed to go to play page and play timers for the workout and after end show back btn
+//and success msg
+goToPlayPageAndPlay(workout1);
+
+
+
 });
 
 
@@ -91,6 +151,7 @@ saveWorkoutBtn.addEventListener('click',(e)=>{
 
 
     //go the workouts page
+    workoutListEl.innerHTML = renderWorkoutList();
     goToWorkoutsPage();
 });
 
@@ -100,7 +161,7 @@ playBtnOnWorkoutsPage.addEventListener('click',(e)=>{
     e.stopPropagation();
     console.log('playbtnfromworkoutsPageSbtn');
     //set the chosen workout as the one that is clicked
-    goToPlayPageAndPlay();
+    // goToPlayPageAndPlay();
 });
 //on btn save workout save the current exercises into a new workout and add it to workouts in the state
 

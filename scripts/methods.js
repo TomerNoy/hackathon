@@ -32,15 +32,15 @@ export const goToWorkoutPage = () =>{
     body.classList.add('workout-page');
 }
 
-export const goToPlayPageAndPlay = () =>{
-    let body = document.body;
-    body.classList.remove('workouts-page','workout-page');
-    body.classList.add('play-page');
-    let workoutToPlay = getChosenWorkout();
+// export const goToPlayPageAndPlay = () =>{
+//     let body = document.body;
+//     body.classList.remove('workouts-page','workout-page');
+//     body.classList.add('play-page');
+//     let workoutToPlay = getChosenWorkout();
 
-    //TODO PLAY THE workoutToPlay and when it finishes exercise show the backToWorkous page and succcess message
+//     //TODO PLAY THE workoutToPlay and when it finishes exercise show the backToWorkous page and succcess message
 
-}
+// }
 
 //TODO
 // export const playWorkout = (workout) =>{
