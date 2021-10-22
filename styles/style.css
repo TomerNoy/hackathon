@@ -1,110 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
+
+:root {
+  --bg1: rgba(255, 255, 255, 0.1);
+
+  --textCol: #f5fffa;
+  --accent1: #fb8500;
+  /* --accent2: #ffb703; */
+  --accent2: #9ACD32;
+  --accent3: #00CED1;
+
+  --fontFamilyTitile: "Comfortaa", cursive;
+  --fontFamilySecondary: "300 Roboto", sans-serif;
+}
+
 * {
   margin: 0 auto;
+  box-sizing: border-box;
+  font-family: var(--fontFamilySecondary);
+  color: var(--textCol);
+  font-size: 1.05em;
+  font-weight: 100;
 }
 
 html {
   width: 100%;
   height: 100%;
+  background: url("../assets/bg-blurx.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-body {
+h1 {
+  text-align: center;
+  margin-top: 5%;
+  font-family: var(--fontFamilyTitile);
+  letter-spacing: 0.1em;
+  font-size: 2em;
+  color: var(--accent2);
 }
 
-#title {
+button,
+.box {
+  display: flex;
+  border-radius: 8px;
+  width: 500px;
+  margin-top: 16px;
+  padding: 16px 30px;
+  justify-content: space-between;
+  background-color: var(--bg1);
+  align-items: baseline;
+}
+
+button > *,
+.box > * {
+  margin: 0;
+}
+
+/* inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="time"],
+input[type="number"],
+#totalTime {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  font-size: 1.5em;
+}
+
+input[type="text"] {
   text-align: center;
 }
 
-#myform {
-  display: grid;
-  grid-auto-columns: 1fr 1fr;
-  grid-template-areas:
-    "workoutNameLabel  workoutName"
-    "warmupLabel warmup"
-    "exerciseNameLabel exerciseName"
-    "setsLabel sets"
-    "restLabel rest"
-    "addExercise addExercise"
-    "cooldownLabel cooldown";
+/* workouts ----------------------------------------------- */
+.workouts button {
+  border: none;
+}
 
-  width: max-content;
-  background-color: lightgrey;
+/* workout ------------------------------------------------ */
+.grid {
+  border-radius: 8px;
+  width: 500px;
+  margin-top: 16px;
+  padding: 30px;
   justify-content: space-between;
+  background-color: var(--bg1);
+  display: grid;
+  width: 500px;
+  grid-auto-columns: 1fr 1.5fr 1fr;
+  grid-auto-rows: auto auto 10px auto;
+  grid-template-areas:
+    "exerciseName exerciseName exerciseName"
+    ". totalTime ."
+    ". . ."
+    "sets work rest"
+    "setsLabel workLabel restLabel"
+    ". addExercise .";
 
-  /* align-content: space-around;
-  justify-content: space-between; */
+  gap: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
-label, input {
+.grid > * {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-}
-
-#workoutName {
-  grid-area: workoutName;
-  background-color: red;
-}
-
-#workoutNameLabel {
-  grid-area: workoutNameLabel;
-  background-color: purple;
-}
-
-#warmup {
-  grid-area: warmup;
-}
-#warmupLabel {
-  grid-area: warmupLabel;
+  height: 100%;
+  align-items: center;
+  text-align: center;
 }
 
 #exerciseName {
   grid-area: exerciseName;
+  width: min-content;
 }
-#exerciseNameLabel {
-  grid-area: exerciseNameLabel;
+#totalTime {
+  grid-area: totalTime;
 }
-
 #sets {
   grid-area: sets;
+}
+#work {
+  grid-area: work;
+  width: fit-content;
+}
+
+#rest {
+  grid-area: rest;
+  width: fit-content;
 }
 #setsLabel {
   grid-area: setsLabel;
 }
-#rest {
-  grid-area: rest;
+#workLabel {
+  grid-area: workLabel;
 }
 #restLabel {
   grid-area: restLabel;
 }
 
+/* add exercise button */
 #addExercise {
   grid-area: addExercise;
-}
-
-#cooldown {
-  grid-area: cooldown;
-}
-
-#cooldownLabel {
-  grid-area: cooldownLabel;
-}
-/* 
-.exercise {
-  background-color: burlywood;
+  display: flex;
   width: max-content;
-  padding: 30px;
-} */
-
-#myform label {
+  flex-direction: row;
+  padding: 6px 18px;
+  background-color: transparent;
+  color: var(--accent3);
+  font-weight: bold;
+}
+#addExercise i {
+  padding: 4px 0 4px 10px;
+  color: var(--accent3);
 }
 
-#myform input {
+.box > input,
+.grid input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: none;
+}
+
+#workoutName {
+  width: 100%;
+}
+
+.workout {
+  display: block;
 }
 
 .savedExercises {
-  background-color: lightpink;
-  width: max-content;
-  padding: 30px;
+  margin-top: 60px;
 }
 
-.savedExercises li {
-  list-style-type: none;
+.savedExercises button {
+  width: fit-content;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+}
+
+.savedExercises i {
+  color: var(--accent1);
+}
+
+/* play --------------------------------------------------- */
+.play time {
+  font-size: 3em;
+}
+
+.play time h1 {
+  color: var(--textCol);
+}
+
+.play p {
+  text-align: center;
+  background-color: var(--bg1);
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 0.9em;
+  }
+  .box {
+    width: 350px;
+  }
+
+  .workouts button {
+    width: 350px;
+  }
+
+  .grid {
+    width: 350px;
+    grid-auto-columns: 1fr 1fr 1fr;
+    gap: 3px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+  body {
+    font-size: 0.9em;
+  }
+  .box {
+    width: 450px;
+  }
+
+  .workouts button {
+    width: 450px;
+  }
+
+  .grid {
+    width: 450px;
+    gap: 8px;
+  }
 }
