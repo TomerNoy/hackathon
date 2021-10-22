@@ -1,6 +1,7 @@
 'use strict'
 import {getInitialWarmup, getInitialExercise, getInitialWorkoutPlan , getInitialState}  from './initial-states.js';
-import {getChosenWorkout, goToPlayPageAndPlay, goToWorkoutPage, goToWorkoutsPage} from './methods.js';
+import {getChosenWorkout, goToWorkoutPage, goToWorkoutsPage} from './methods.js';
+// import {goToPlayPageAndPlay} from './methods.js';
 import {getDemoData} from './data.js'
 import {createExercise, updateExercise, deleteExercise, getExercise} from './crud-functions.js';
 import {createWorkout, updateWorkout, deleteWorkout, getWorkout} from './crud-functions.js';
@@ -20,7 +21,7 @@ window.addEventListener('load',()=>{
 let appState = initialState;
 
 //for testing
-// let appState = getDemoData();
+appState = getDemoData();
 
 window.intervalAppState = appState;
 
@@ -32,8 +33,13 @@ console.log(getDemoData());
 const workoutListEl = document.querySelector(".workoutsList");
 //show the workouts page by state onload
 console.log(appState.workouts);
-workoutListEl.innerHTML = renderWorkoutList(appState.workouts);
 
+
+
+
+//TOMER THIS CHANGES THE WORKOUTS WE HAVE IN THE HTML
+//TO THE ONE FROM getDemoData function
+workoutListEl.innerHTML = renderWorkoutList(appState.workouts);
 
 
 //TOMER - START play test here
@@ -90,7 +96,8 @@ function goToPlayPageAndPlay(workoutObj){
 
 //this is supposed to go to play page and play timers for the workout and after end show back btn
 //and success msg
-goToPlayPageAndPlay(workout1);
+//TOMER - activiate this function
+// goToPlayPageAndPlay(workout1);
 
 
 
