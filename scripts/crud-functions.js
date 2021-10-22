@@ -1,7 +1,7 @@
 'use strict'
 //CRUD functions - for exercises
 //create function
-export const createWorkout = (exerciseList, newExercise) =>{
+export const createExercise = (exerciseList, newExercise) =>{
     const newExerciseList = exerciseList.concat([newExercise]);
     return newExerciseList;
 };
