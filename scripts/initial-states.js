@@ -34,30 +34,33 @@ export const getInitialExercise = ()=> {
 //initialWorkoutPlan
 const initialWorkoutPlan = {
     exercises:[], //list of all exercises in the workout plan
-    warmUp:null, //
-    coolDown:null
+    warmUpTime:null, //
+    coolDownTime:null,
+    totalTime
 };
+
 export const  getInitialWorkoutPlan = ()=> {
     return {...initialWorkoutPlan};
 }
 
 
 //TODO initialUserSettings
-const initialUserSettings = {
-    backgroundColor:null
-};
+// const initialUserSettings = {
+//     backgroundColor:null
+// };
 
-export const getInitialUserSettings = ()=> {
-    return {...initialUserSettings};
-}
+// export const getInitialUserSettings = ()=> {
+//     return {...initialUserSettings};
+// }
 
 
-//TODO state object for the app
+// state object for the app
 const intervalAppState = {
     workouts: [],
-    chosenWorkout:null,
-    userSettings: {}
+    chosenWorkout:null
+    // ,userSettings: {}
 };
+
 //TODO immutable state changes? deep clone?
 export const  getInitialState = () => {
     return {...intervalAppState};

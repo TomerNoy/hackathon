@@ -1,4 +1,7 @@
 'use strict'
+
+import { getWorkoutTotalTime } from "./methods";
+
 //CRUD functions - for exercises
 //create function
 export const createExercise = (exerciseList, newExercise) =>{
@@ -31,6 +34,7 @@ export const deleteExercise = (exercises, exerciseIdxToDelete) => {
 
 //create workout
 export const createWorkout = (workoutList, newWorkout) =>{
+    newWorkout.totalTime = getWorkoutTotalTime(newWorkout);
     const newWorkoutList = workoutList.concat([newWorkout]);
     return newWorkoutList;
 };
@@ -41,6 +45,7 @@ export const getWorkout = (workoutList, workoutIdx) => {
 
 //update function
 export const updateWorkout = (originalWorkoutIdx , newWorkout) =>{
+    newWorkout.totalTime = getWorkoutTotalTime(newWorkout);
     const newList = list.map((currWorkout, currWorkoutIdx) => {
         return currWorkoutIdx === originalWorkoutIdx ? newWorkout : currWorkout;
     });

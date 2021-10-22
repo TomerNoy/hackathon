@@ -32,8 +32,29 @@ export const goToWorkoutPage = () =>{
     body.classList.add('workout-page');
 }
 
-export const goToPlayPage = () =>{
+export const goToPlayPageAndPlay = () =>{
     let body = document.body;
     body.classList.remove('workouts-page','workout-page');
     body.classList.add('play-page');
+    let workoutToPlay = getChosenWorkout();
+
+    //TODO PLAY THE workoutToPlay and when it finishes exercise show the backToWorkous page and succcess message
+
+}
+
+//TODO
+// export const playWorkout = (workout) =>{
+
+// }
+
+
+//TODO calculate totaltime of workout
+
+export const getWorkoutTotalTime = ({warmupTime, exercises, cooldownTime})=>{
+    let totalWorkoutTime = warmUpTime + coolDownTime;
+    exercises.forEach( (exercise) => {
+        let exerciseTime = exercises.sets * (exercise.workoutTime + exercise.restTime);
+        totalWorkoutTime+=exerciseTime;
+    });
+    return totalWorkoutTime;
 }

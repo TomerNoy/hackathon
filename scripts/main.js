@@ -1,19 +1,23 @@
 'use strict'
 import {getInitialWarmup, getInitialExercise, getInitialWorkoutPlan, getInitialUserSettings , getInitialState}  from './initial-states.js';
-import {getChosenWorkout, goToWorkoutPage, goToWorkoutsPage} from './methods.js';
+import {getChosenWorkout, goToPlayPageAndPlay, goToWorkoutPage, goToWorkoutsPage} from './methods.js';
 import {createExercise, updateExercise, deleteExercise, getExercise} from './crud-functions.js';
 import {createWorkout, updateWorkout, deleteWorkout, getWorkout} from './crud-functions.js';
 import {renderExercise,renderExerciseList,renderWorkout,renderWorkoutList} from './render-functions.js';
 
 //get initialState  - from getInitialState or TODO local-storage
 const initialState =  getInitialState();
+
+//TODO if script needs to work only after elements loaded put everything inside the event listener
+// window.addEventListener('load',()=>{
+// });
+
 //put state
 window.intervalAppState = initialState;
-//render by state on load
-const workoutListEl = document.querySelector("#workout_list");
 
+//render by state on load
+const workoutListEl = document.querySelector(".workoutsList");
 //show the workouts page by state onload
-// showWorkoutsListPage(); //TODO
 // renderWorkoutList()
 
 //on btn click on create new workout or a specific workout go to a single-workout page with either no data or existing exercises
@@ -65,7 +69,7 @@ backToWorkoutBtn.addEventListener('click',(e)=>{
 const saveWorkoutBtn = document.querySelector("#saveWorkout");
 saveWorkoutBtn.addEventListener('click',(e)=>{
     e.preventDefault();
-    console.log('BACKTOWORKOUTSbtn');
+    console.log('saveWorkoutSbtn');
     //TODO save the workout in the workout-list in state before moving to the page there
 
 
@@ -73,8 +77,14 @@ saveWorkoutBtn.addEventListener('click',(e)=>{
     goToWorkoutsPage();
 });
 
-
-
+const playBtnOnWorkoutsPage = document.querySelector('.workout-short .fa-play');
+playBtnOnWorkoutsPage.addEventListener('click',(e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('playbtnfromworkoutsPageSbtn');
+    //set the chosen workout as the one that is clicked
+    goToPlayPageAndPlay();
+});
 //on btn save workout save the current exercises into a new workout and add it to workouts in the state
 
 //on btn click on back to workouts go to workout
