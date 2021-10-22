@@ -34,15 +34,20 @@ submitBtn.addEventListener('submit',(e)=>{
             }
             ,{}); //reduce initial starting value - an empty object - to contain all form values by inputname:inputvalue
     console.log(formValues);
-    
-
-
-
 });
+
+//adding event listeners for moving pages
+// const addWorkoutBtn =
+
+
+
+
 
 //on btn save workout save the current exercises into a new workout and add it to workouts in the state
 
 //on btn click on back to workouts go to workout
+
+
 
 //on btn click play workout
 

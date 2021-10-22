@@ -22,3 +22,23 @@ export const startWorkoutPlan = (elemRef) =>{
 
 //go back to workout page
 
+
+
+export const goToWorkoutsPage = () =>{
+    let body = document.body;
+    body.classList.remove('workout-page','play-page');
+    body.classList.add('workouts-page');
+}
+
+export const goToWorkoutPage = () =>{
+    let body = document.body;
+    body.classList.remove('workouts-page','play-page');
+    body.classList.add('workout-page');
+}
+
+export const goToPlayPage = () =>{
+    let body = document.body;
+    body.classList.remove('workouts-page','workout-page');
+    body.classList.add('play-page');
+}
+
