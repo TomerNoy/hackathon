@@ -64,9 +64,14 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
+input[type="time"] {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
 input[type="time"],
 input[type="number"],
-#totalTime {
+#totalExerciseTime {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -94,17 +99,29 @@ input[type="text"] {
   color: var(--accent3);
   font-weight: bold;
   border: none;
+  transition: 0.3s;
+}
+#addWorkout:hover,
+#saveWorkout:hover {
+  box-shadow: 0 0 8px 2px var(--accent3);
+  cursor: pointer;
 }
 
-#backButton {
+.backButton {
   width: max-content;
   margin-top: 30px;
   color: var(--accent1);
   font-weight: bold;
   border: none;
+  transition: 0.3s;
 }
 
-#backButton i {
+.backButton:hover {
+  box-shadow: 0 0 8px 2px var(--accent1);
+  cursor: pointer;
+}
+
+.backButton i {
   padding: 4px 10px 4px 0px;
   color: var(--accent1);
 }
@@ -116,7 +133,7 @@ input[type="text"] {
 
 /* workout ------------------------------------------------ */
 .workout {
-  /* display: none; */
+  display: none;
   margin-bottom: 200px;
 }
 
@@ -129,11 +146,11 @@ input[type="text"] {
   background-color: var(--bg1);
   display: grid;
   width: 500px;
-  grid-auto-columns: 1fr 1.5fr 1fr;
+  grid-auto-columns: 1fr;
   grid-auto-rows: auto auto 10px auto;
   grid-template-areas:
     "exerciseName exerciseName exerciseName"
-    ". totalTime ."
+    ". totalExerciseTime ."
     ". . ."
     "sets work rest"
     "setsLabel workLabel restLabel"
@@ -157,8 +174,8 @@ input[type="text"] {
   grid-area: exerciseName;
   width: min-content;
 }
-#totalTime {
-  grid-area: totalTime;
+#totalExerciseTime {
+  grid-area: totalExerciseTime;
 }
 #sets {
   grid-area: sets;
@@ -192,7 +209,13 @@ input[type="text"] {
   color: var(--accent3);
   font-weight: bold;
   border: none;
+  transition: 0.3s;
 }
+#addExercise:hover {
+  box-shadow: 0 0 8px 2px var(--accent3);
+  cursor: pointer;
+}
+
 #addExercise i,
 #addWorkout i,
 #saveWorkout i {
@@ -212,10 +235,6 @@ input[type="text"] {
   width: 100%;
 }
 
-.savedExercises {
-  margin-top: 60px;
-}
-
 .savedExercises button {
   width: fit-content;
   padding: 5px;
@@ -229,21 +248,13 @@ input[type="text"] {
 
 /* play --------------------------------------------------- */
 .play {
-  /* display: none; */
+  display: none;
   margin-bottom: 200px;
 }
 
-.play time {
-  font-size: 3em;
-}
-
-.play time h1 {
+#timer {
   color: var(--textCol);
-}
-
-.play p {
-  text-align: center;
-  background-color: var(--bg1);
+  font-size: 5em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -251,7 +262,7 @@ input[type="text"] {
     font-size: 0.9em;
   }
   .box {
-    width: 350px;
+    width: 400px;
   }
 
   .workouts button {
@@ -259,13 +270,11 @@ input[type="text"] {
   }
 
   .buttons {
-    width: 350px;
+    width: 400px;
   }
 
   .grid {
-    width: 350px;
-    grid-auto-columns: 1fr 1fr 1fr;
-    gap: 3px;
+    width: 400px;
   }
 }
 
@@ -283,37 +292,8 @@ input[type="text"] {
 
   .grid {
     width: 450px;
-    gap: 8px;
   }
   .buttons {
     width: 450px;
   }
-}
-
-
-/* for workout list mode - initial mode - show only workout-list page - when starting or when click on back to workout-list btn */
-body.workouts-page .workouts{
-  display:block;
-}
-body.workouts-page  .workout,
-body.workouts-page .play{
-  display:none;
-}
-
-/* for workout-page  mode - show only workout-page - when clicks on a workout or on add workout button on workout-list page */
-body.workout-page  .workout{
-  display:block;
-}
-body.workout-page .workouts,
-body.workout-page  .play{
-  display:none;
-}
-
-/* for player-page  mode - show only player-page - when click on play workout btn */
-body.play-page .play{
-  display:block;
-}
-body.play-page .workouts,
-body.play-page .workout{
-  display:none;
 }

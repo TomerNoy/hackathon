@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>name?</title>
+    <title>Better Workout</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/style.css" />
@@ -13,34 +13,12 @@
     ></script>
   </head>
   <body class="workouts-page">
+    <!--<button id="testBtn">testbtn</button>-->
     <!-- workouts -->
     <div class="workouts">
       <h1>WORKOUTS</h1>
-      <div class="workoutsList">
-
-        <div class="workout-short box">
-          <i class="fas fa-sliders-h"></i>
-          <p class="workout-name">workout example1</p>
-          <time class="workout-total-time">01:30</time>
-          <i class="fas fa-play"></i>
-        </div>
-
-        <div class="workout-short box">
-          <i class="fas fa-sliders-h"></i>
-          <p class="workout-name">workout example2</p>
-          <time class="workout-total-time">01:30</time>
-          <i class="fas fa-play"></i>
-        </div>
-
-        <div class="workout-short box">
-          <i class="fas fa-sliders-h"></i>
-          <p class="workout-name">workout example3</p>
-          <time class="workout-total-time">01:30</time>
-          <i class="fas fa-play"></i>
-        </div>
-
-      </div>
-      <button id="addWorkout">Add<i class="fas fa-plus fa-lg"></i></button>
+      <div class="workoutsList"></div>
+      <button id="addWorkout">Add<i class="fas fa-plus fa-lg"></i></button>/
     </div>
 
     <!-- workout -->
@@ -59,7 +37,7 @@
 
         <div class="box">
           <label id="warmupLabel" for="warmup">Warm Up</label>
-          <input type="time" id="warmup" name="warmup" value="00:00" />
+          <input type="time" id="warmup" name="warmup" value="00:00" required />
         </div>
 
         <!-- exercise -->
@@ -74,7 +52,7 @@
           />
 
           <!-- total exercise time -->
-          <time id="totalTime">00:00</time>
+          <time id="totalExerciseTime">00:00</time>
           <!-- number of sets -->
           <input
             type="number"
@@ -87,11 +65,12 @@
           <label id="setsLabel" for="sets">Sets</label>
 
           <!-- work set time -->
-          <input type="time" id="work" name="work" value="00:00" />
+          <input type="time" id="work" name="work" value="00:00" required />
+
           <label id="workLabel" for="work">Work</label>
 
           <!-- rest -->
-          <input type="time" id="rest" name="rest" value="00:00" />
+          <input type="time" id="rest" name="rest" value="00:00" required />
           <label id="restLabel" for="rest">Rest</label>
 
           <!-- add -->
@@ -99,47 +78,36 @@
             Add <i class="fas fa-plus fa-lg"></i>
           </button>
         </div>
-
+        <div class="savedExercises"></div>
         <div class="box">
           <label id="cooldownLabel" for="cooldown">Cooldown</label>
-          <input type="time" id="cooldown" name="cooldown" value="00:00" />
+          <input
+            type="time"
+            id="cooldown"
+            name="cooldown"
+            value="00:00"
+            required
+          />
         </div>
       </form>
 
-      <div class="savedExercises">
-        <div class="box">
-          <p>example push ups</p>
-          <p>3</p>
-          <time>00:30</time>
-          <time>00:45</time>
-          <button><i class="fas fa-minus"></i></button>
-        </div>
-
-        <div class="box">
-          <p>example dead lifts</p>
-          <p>5</p>
-          <time>00:40</time>
-          <time>00:30</time>
-          <button><i class="fas fa-minus"></i></button>
-        </div>
-      </div>
-
       <div class="buttons">
-        <button id="backButton"><i class="fas fa-chevron-left"></i>Back</button>
+        <button id="workout2workouts" class="backButton">
+          <i class="fas fa-chevron-left"></i>Back
+        </button>
         <button id="saveWorkout">Save <i class="fas fa-save"></i></button>
       </div>
     </div>
 
     <div class="play">
-      <h1>WARMUP</h1>
-      <time><h1>00:00</h1></time>
-      <button id="backButton"><i class="fas fa-chevron-left"></i>Back</button>
-      <p>title can be: WARMUP/REST/WORK/COOLDOWN</p>
-      <p>time: dont need total workout countdown, just for the current title</p>
+      <h1 id="playTitle">START</h1>
+      <time><h1 id="timer">00:00</h1></time>
+      <button id="play2workouts" class="backButton">
+        <i class="fas fa-chevron-left"></i>Back
+      </button>
     </div>
 
-    <!-- <script src="scripts/main.js" type="module" async defer></script> -->
-    <script src="scripts/main.js" type="module"></script>
-
+    <script src="scripts/main2.js" type="module" async defer></script>
+    <!-- <script src="scripts/main.js" type="module"></script> -->
   </body>
 </html>
