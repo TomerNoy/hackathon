@@ -19,6 +19,7 @@ const addExercise = document.getElementById('addExercise');
 const saveWorkout = document.getElementById('saveWorkout');
 const play2workouts = document.getElementById('play2workouts');
 const workout2workouts = document.getElementById('workout2workouts');
+const end_exercise_audio = new Audio('../assets/end-exercise-beep.wav');
 
 const pages = [workoutsPage, workoutPage, playPage];
 
@@ -225,8 +226,10 @@ async function editWorkout(workout) {
 async function playWorkout(workout) {
     moveToPage(2);
 
-    /// play warmup
-    await playTimer(workout['warmup'], timer, 'WARMUP', playTitle);
+    /// play warmup if it exists in the workout
+    if(workout['warmup']){
+        await playTimer(workout['warmup'], timer, 'WARMUP', playTitle);
+    }
 
     /// play workouts
     const exercises = workout['exercises'];
@@ -246,8 +249,10 @@ async function playWorkout(workout) {
         }
     }
 
-    /// play cooldown
-    await playTimer(workout['cooldown'], timer, 'COOLDOWN', playTitle);
+    /// play cooldown if it exists in the workout
+    if(workout['cooldown']){
+        await playTimer(workout['cooldown'], timer, 'COOLDOWN', playTitle);
+    }
 
     playTitle.textContent = 'CONGRATZ'
     timer.textContent = 'DONE!'
@@ -317,6 +322,12 @@ function playTimer(duration, timer, titleName, title) {
             if (--t < 0) {
                 t = duration;
                 clearInterval(interval);
+
+                //play end exercise sound
+                if(end_exercise_audio){
+                    end_exercise_audio.play();
+                }
+
                 resolve();
             };
         }, 1000);
