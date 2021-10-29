@@ -64,6 +64,13 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+  display:none;
+
+}
+
+
 input[type="time"] {
   padding-left: 20px;
   padding-right: 0;
